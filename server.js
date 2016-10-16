@@ -65,6 +65,15 @@ app.get('/counter', function(req, res) {
    res.send(counter.toString());//You can only send a string as response and not a number as a response
 });
 
+var names = [];
+app.get('/submit-name/:name', function(req, res) {
+    //Set the name from request
+    var name = req.params.name;
+    names.push(name);
+    
+    res.send(JSON.stringify(names));
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
