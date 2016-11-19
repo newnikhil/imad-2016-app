@@ -84,6 +84,8 @@ app.get('/', function (req, res) {
 
 var counter = 0;
 app.get('/counter', function(req, res) {
+    
+    console.log("hello");
    counter++;
    res.send(counter.toString());//You can only send a string as response and not a number as a response
 });
