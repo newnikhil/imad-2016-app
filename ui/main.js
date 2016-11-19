@@ -30,7 +30,7 @@ var submit = document.getElementById("submit_btn");
 
 submit.onclick = function() {
     //Create a request object
-/*    var request = new XMLHttpRequest();
+    var request = new XMLHttpRequest();
     
   //Capture the response and store it in a variable
     request.onreadystatechange = function() {
@@ -51,19 +51,13 @@ submit.onclick = function() {
         }
         //Not done yet
     };
-    */
+    
     var nameInput = document.getElementById("name");
     var name = nameInput.value;
     
-    var li = document.createElement('li');
-    li.firstChild.value = name;
-    
-    var ul = document.getElementById("namelist");
-    ul.appendChild(li);
-    
     //Make the request
-/*    request.open('GET', "http://newnikhil.imad.hasura-app.io/submit-name?name=" + name, true);
-    request.send(null);*/
+    request.open('GET', "http://newnikhil.imad.hasura-app.io/submit-name?name=" + name, true);
+    request.send(null);
     //Make a request to the server and send the name
     //Capture a list of names and render as a list
 
