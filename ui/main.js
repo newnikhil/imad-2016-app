@@ -56,7 +56,7 @@ submit.onclick = function() {
     var name = nameInput.value;
     
     var li = document.createElement('li');
-    li.innerText.value = name;
+    li.firstChild.value = name;
     
     var ul = document.getElementById("namelist");
     ul.appendChild(li);
