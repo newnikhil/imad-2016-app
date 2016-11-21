@@ -15,7 +15,7 @@ art.onclick = function()
                 
                 if (req.readyState ===  XMLHttpRequest.DONE) {
 //                document = req.response;
-                    console.log(req.responseText);
+                    alert(req.responseText);
                 }
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
                 
