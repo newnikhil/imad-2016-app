@@ -17,7 +17,7 @@ art.onclick = function()
                     if (req.readyState ===  XMLHttpRequest.DONE) {
 //                        console.log("hello1");
                         document.innerHTML = req.responseText;
-                        document.location.reload();
+//                        document.location.reload();
                         if (req.status == 200 || req.status == 304) {
                             alert(req.responseText);
                             console.log("hello");
@@ -25,7 +25,7 @@ art.onclick = function()
                     }
                 };
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
-                
+                req.responseType = 'document';
                 req.send(null);
             } else if (request.status === 403) {
                 alert("You need to login first!");
