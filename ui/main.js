@@ -13,7 +13,7 @@ art.onclick = function()
                 //alert("User successfully logged in");
                 var req = new XMLHttpRequest();
                 
-                request.onreadystatechange = function() {
+                req.onreadystatechange = function() {
                     if (req.readyState ===  XMLHttpRequest.DONE) {
     //                document = req.response;
                         if (req.status == 200 || req.status == 304) {
