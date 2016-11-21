@@ -197,13 +197,15 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/article-two', function (rq, rs) {
+    var flag = 0;
     app.get('/check-login', function(req, res) {
         if (req.session && req.session.auth && req.session.auth.userId) {
-            rs.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-        } else {
-            rs.send('You need to login to view the article!');
+            flag = 1;
         }
     });
+    if (flag === 1) {
+        rs.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    }
 });
 
 app.get('/ui/madi.png', function (req, res) {
