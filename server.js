@@ -205,7 +205,13 @@ app.get('/article-one', function (req, res) {
 });
 
 app.get('/article-two', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+    app.get('/check-login', function(req, res) {
+        if (req.session && req.session.auth && req.session.auth.userId) {
+            res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+        } else {
+            res.send('You need to login to view the article!');
+        }
+    });
 });
 
 app.get('/article-three', function (req, res) {
