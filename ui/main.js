@@ -16,8 +16,8 @@ art.onclick = function()
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
                 
                 req.send(null);
-                document = req.response;
-                console.log("hello");
+//                document = req.response;
+                console.log(req.responseText);
             } else if (request.status === 403) {
                 alert("You need to login first!");
             } else if (request.status === 500) {
