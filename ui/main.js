@@ -17,7 +17,7 @@ art.onclick = function()
                     if (req.readyState ===  XMLHttpRequest.DONE) {
 //                        console.log("hello1");
                         document.innerHTML = req.responseText;
-                        window.location.reload();
+                        document.location.reload();
                         if (req.status == 200 || req.status == 304) {
                             alert(req.responseText);
                             console.log("hello");
