@@ -10,8 +10,8 @@ art.onclick = function()
         if (request.readyState === XMLHttpRequest.DONE) {
             //Take some action
             if (request.status == 200) {
-                window.location.href.replace("http://newnikhil.imad.hasura-app.io/article-two");
-                window.location.reload();
+                window.location.href = "http://newnikhil.imad.hasura-app.io/article-two";
+//                window.location.reload();
                 //alert("User successfully logged in");
 /*                var req = new XMLHttpRequest();
                 
