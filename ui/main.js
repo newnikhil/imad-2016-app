@@ -25,7 +25,7 @@ art.onclick = function()
                     }
                 };
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
-                req.responseType = 'document';
+                req.responseType = 'text';
                 req.send(null);
             } else if (request.status === 403) {
                 alert("You need to login first!");
