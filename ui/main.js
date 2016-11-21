@@ -13,7 +13,7 @@ art.onclick = function()
                 //alert("User successfully logged in");
                 var req = new XMLHttpRequest();
                             
-                req.open('POST', "http://newnikhil.imad.hasura-app.io/article-two", true);
+                req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
                 req.send(null);
             } else if (request.status === 403) {
                 alert("You need to login first!");
@@ -25,7 +25,7 @@ art.onclick = function()
     };
     
     //Make the request
-    request.open('POST', "http://newnikhil.imad.hasura-app.io/check-login", true);
+    request.open('GET', "http://newnikhil.imad.hasura-app.io/check-login", true);
     request.send(null);
     //Make a request to the server and send the name
     //Capture a list of names and render as a list
