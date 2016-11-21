@@ -196,18 +196,6 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/article-two', function (rq, rs) {
-    var flag = 0;
-    app.get('/check-login', function(req, res) {
-        if (req.session && req.session.auth && req.session.auth.userId) {
-            flag = 1;
-        }
-    });
-    if (flag === 1) {
-        rs.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
-    }
-});
-
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
@@ -216,6 +204,9 @@ app.get('/article-one', function (req, res) {
   res.send(createTemplate(articleOne));
 });
 
+app.get('/article-two', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+});
 
 app.get('/article-three', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
