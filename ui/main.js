@@ -15,7 +15,7 @@ art.onclick = function()
                 
                 req.onreadystatechange = function() {
                     if (req.readyState ===  XMLHttpRequest.DONE) {
-                        console.log("hello1");
+//                        console.log("hello1");
     //                document = req.response;
                         if (req.status == 200 || req.status == 304) {
                             alert(req.responseText);
