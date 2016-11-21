@@ -16,13 +16,13 @@ art.onclick = function()
                 req.onreadystatechange = function() {
                     if (req.readyState ===  XMLHttpRequest.DONE) {
 //                        console.log("hello1");
-    //                document = req.response;
+                        document.innerHTML = req.responseText;
                         if (req.status == 200 || req.status == 304) {
                             alert(req.responseText);
                             console.log("hello");
                         }
                     }
-                }
+                };
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
                 
                 req.send(null);
