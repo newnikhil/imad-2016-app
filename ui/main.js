@@ -13,11 +13,13 @@ art.onclick = function()
                 //alert("User successfully logged in");
                 var req = new XMLHttpRequest();
                 
-                if (req.readyState ===  XMLHttpRequest.DONE) {
-//                document = req.response;
-                    if (req.status == 200 || req.status == 304) {
-                        alert(req.responseText);
-                        console.log("hello");
+                request.onreadystatechange = function() {
+                    if (req.readyState ===  XMLHttpRequest.DONE) {
+    //                document = req.response;
+                        if (req.status == 200 || req.status == 304) {
+                            alert(req.responseText);
+                            console.log("hello");
+                        }
                     }
                 }
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
