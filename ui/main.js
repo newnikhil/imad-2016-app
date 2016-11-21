@@ -17,7 +17,7 @@ art.onclick = function()
                 
                 req.send(null);
 //                document.innerHTML = req.response;
-                console.log(req.response + "hello");
+                console.log("hello");
             } else if (request.status === 403) {
                 alert("You need to login first!");
             } else if (request.status === 500) {
