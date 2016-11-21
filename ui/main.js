@@ -16,10 +16,11 @@ art.onclick = function()
                 req.onreadystatechange = function() {
                     if (req.readyState ===  XMLHttpRequest.DONE) {
 //                        console.log("hello1");
-                        document.innerHTML = req.responseText;
+//                        document.innerHTML = req.responseText;
 //                        document.location.reload();
                         if (req.status == 200 || req.status == 304) {
                             alert(req.responseText);
+                            document.innerHTML = req.responseText;
                             console.log("hello");
                         }
                     }
