@@ -12,12 +12,14 @@ art.onclick = function()
             if (request.status == 200) {
                 //alert("User successfully logged in");
                 var req = new XMLHttpRequest();
-                            
+                
+                if (req.readyState ===  XMLHttpRequest.DONE) {
+//                document = req.response;
+                    console.log(req.responseText);
+                }
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
                 
                 req.send(null);
-//                document = req.response;
-                console.log(req.responseText);
             } else if (request.status === 403) {
                 alert("You need to login first!");
             } else if (request.status === 500) {
