@@ -2,7 +2,7 @@ var post = document.getElementById('post');
 
 post.onclick = function() {
   var li = document.createElement('li');
-  var text = document.getElementById('comment').textContent;
+  var text = document.getElementById('comment').value;
   if (text) {
       console.log('yes');
   } else {
