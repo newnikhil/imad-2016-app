@@ -200,6 +200,10 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+app.get('/ui/article.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'article.js'));
+});
+
 app.get('/article-one', function (req, res) {
   res.send(createTemplate(articleOne));
 });
