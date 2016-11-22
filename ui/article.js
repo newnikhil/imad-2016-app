@@ -49,7 +49,7 @@ post.onclick = function() {
         //Make the request
     req.open('POST', "http://newnikhil.imad.hasura-app.io/post-comment", true);
     req.setRequestHeader('Content-Type', 'application/json');
-    req.send(null);
+    req.send(JSON.stringify({comment: text}));
 
   }
 };
