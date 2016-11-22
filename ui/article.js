@@ -11,8 +11,8 @@ req.onreadystatechange = function() {
         //Take some action
         if (req.status == 200) {
              var ul = document.getElementById('postList');
-             ul.innerHTML = request.responseText;
-             alert(request.responseText);
+             ul.innerHTML = req.responseText;
+             alert(req.responseText);
         }
     }
     //Not done yet
