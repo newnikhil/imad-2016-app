@@ -188,6 +188,20 @@ app.get('/articles/:articleName', function(req, res) {
     });
 });
 
+app.get('/display-comments', function(req, res) {
+    pool.query("SELECT * FROM 'comment'", function(err, result) {
+       if (err)  {
+           res.status(500).send(err.toString());
+       } else {
+           var comments = "";
+           for (var i = 0; i < result.rows.length; i++) {
+               comments += '<li>' + result.rows[i].comment + '</li>';
+           }
+           res.send(comments);
+       }
+    });
+});
+
 app.post('/post-comment', function(req, res) {
     //username, password
     //JSON
