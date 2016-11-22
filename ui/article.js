@@ -1,4 +1,5 @@
 var comment = document.getElementById('comment');
+comment.style.display = 'block';
 
 var request = new XMLHttpRequest();
 
