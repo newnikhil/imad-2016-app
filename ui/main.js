@@ -1,6 +1,6 @@
-var post = document.getElementById('post');
+var comment = document.getElementById('comment');
 
-post.onclick = function() {
+comment.onclick = function() {
   var li = document.createElement('li');
   var text = document.getElementById('comment').textContent;
   if (text) {
