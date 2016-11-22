@@ -3,6 +3,7 @@ var post = document.getElementById('post');
 post.onclick = function() {
   var li = document.createElement('li');
   var text = document.getElementById('comment').textContent;
+  alert(text);
   li.textContent = text;
   
   var ul = document.getElementById('postList');
