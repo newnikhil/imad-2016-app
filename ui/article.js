@@ -14,7 +14,7 @@ request.onreadystatechange = function() {
             post_btn.style.display = 'block';
         } else if (request.status === 403) {
             comment.style.display = 'none';
-            post_btn.style.display = 'block';            
+            post_btn.style.display = 'none';            
         } else if (request.status === 500) {
             alert("Something went wrong on the server");
         }
