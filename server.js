@@ -194,7 +194,7 @@ app.post('/post-comment', function(req, res) {
     var comment = req.body.comment;
     
     var username = "";
-    pool.query('SELECT username from "user" WHERE id = ' + req.session.auth.userId, function(err, result) {
+    pool.query('SELECT username from "user" WHERE id = "' + req.session.auth.userId + '"', function(err, result) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
