@@ -4,12 +4,12 @@ comment.style.display = 'none';
 var post_btn = document.getElementById('post');
 post_btn.style.display = 'none';
 
-var request = new XMLHttpRequest();
+var req = new XMLHttpRequest();
 
-request.onreadystatechange = function() {
-    if (request.readyState === XMLHttpRequest.DONE) {
+req.onreadystatechange = function() {
+    if (req.readyState === XMLHttpRequest.DONE) {
         //Take some action
-        if (request.status == 200) {
+        if (req.status == 200) {
              var ul = document.getElementById('postList');
              ul.innerHTML = request.responseText;
         }
@@ -18,8 +18,8 @@ request.onreadystatechange = function() {
 };
     
     //Make the request
-request.open('GET', "http://newnikhil.imad.hasura-app.io/display-comments", true);
-request.send(null);
+req.open('GET', "http://newnikhil.imad.hasura-app.io/display-comments", true);
+req.send(null);
 
 var request = new XMLHttpRequest();
 
