@@ -146,20 +146,6 @@ submit_register.onclick = function() {
 
 };
 
-var post = document.getElementById('post');
-
-post.onclick = function() {
-  var li = document.createElement('li');
-  var text = document.getElementById('comment').value;
-  
-  if (text.length > 0) {
-    li.textContent = text;
-  
-    var ul = document.getElementById('postList');
-    ul.appendChild(li);
-  }
-};
-
 /*
 //Submit name
 var submit = document.getElementById("submit_btn");
