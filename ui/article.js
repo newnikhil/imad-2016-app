@@ -1,6 +1,9 @@
 var comment = document.getElementById('comment');
 comment.style.display = 'none';
 
+var post_btn = document.getElementById('post');
+post_btn.style.display = 'none';
+
 var request = new XMLHttpRequest();
 
 request.onreadystatechange = function() {
@@ -8,8 +11,10 @@ request.onreadystatechange = function() {
         //Take some action
         if (request.status == 200) {
             comment.style.display = 'block';
+            post_btn.style.display = 'block';
         } else if (request.status === 403) {
             comment.style.display = 'none';
+            post_btn.style.display = 'block';            
         } else if (request.status === 500) {
             alert("Something went wrong on the server");
         }
