@@ -191,7 +191,7 @@ app.get('/articles/:articleName', function(req, res) {
 app.post('/post-comment', function(req, res) {
     //username, password
     //JSON
-    var comment = req.body.post;
+    var comment = req.body.comment;
     
     pool.query('INSERT INTO "comment" (comment) VALUES ($1)', [comment], function(err, result) {
         if (err) {
