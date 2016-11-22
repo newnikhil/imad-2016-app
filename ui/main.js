@@ -3,6 +3,11 @@ var post = document.getElementById('post');
 post.onclick = function() {
   var li = document.createElement('li');
   var text = document.getElementById('comment').textContent;
+  if (text) {
+      console.log('yes');
+  } else {
+      console.log('no');
+  }
   alert(text);
   li.textContent = text;
   
