@@ -199,6 +199,7 @@ app.post('/post-comment', function(req, res) {
             res.status(500).send(err.toString());
         } else {
             username = result.rows[0].username;
+            
         }
     });
     
@@ -206,7 +207,7 @@ app.post('/post-comment', function(req, res) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
-            res.send("Comment inserted" + comment);
+            res.send("Comment inserted " + comment + ": " + username);
         }
     });
 });
