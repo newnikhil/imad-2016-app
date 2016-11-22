@@ -193,7 +193,16 @@ app.post('/post-comment', function(req, res) {
     //JSON
     var comment = req.body.comment;
     
-    pool.query('INSERT INTO "comment" (comment, username) VALUES ($1, $2)', [comment, req.session.auth.userId], function(err, result) {
+    var username = "";
+    pool.query('SELECT username from "user" WHERE id = ' + req.session.auth.userId, function(err, result) {
+        if (err) {
+            res.status(500).send(err.toString());
+        } else {
+            username = result.rows[0].username;
+        }
+    });
+    
+    pool.query('INSERT INTO "comment" (comment, username) VALUES ($1, $2)', [comment, username], function(err, result) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
