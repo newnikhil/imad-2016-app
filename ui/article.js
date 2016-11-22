@@ -1,5 +1,5 @@
 var comment = document.getElementById('comment');
-comment.style.display = 'block';
+comment.style.display = 'none';
 
 var request = new XMLHttpRequest();
 
@@ -7,9 +7,9 @@ request.onreadystatechange = function() {
     if (request.readyState === XMLHttpRequest.DONE) {
         //Take some action
         if (request.status == 200) {
-            comment.style.display = 'none';
-        } else if (request.status === 403) {
             comment.style.display = 'block';
+        } else if (request.status === 403) {
+            comment.style.display = 'none';
         } else if (request.status === 500) {
             alert("Something went wrong on the server");
         }
