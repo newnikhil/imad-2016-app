@@ -29,8 +29,27 @@ post.onclick = function() {
   
   if (text.length > 0) {
     li.textContent = text;
-  
     var ul = document.getElementById('postList');
     ul.appendChild(li);
+    
+    var req = new XMLHttpRequest();
+
+    req.onreadystatechange = function() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            //Take some action
+            if (request.status == 200) {
+                alert(req.responseText);
+            } else if (request.status === 500) {
+                alert("Something went wrong on the server");
+            }
+        }
+        //Not done yet
+    };
+        
+        //Make the request
+    req.open('POST', "http://newnikhil.imad.hasura-app.io/post-comment", true);
+    req.setRequestHeader('Content-Type', 'application/json');
+    req.send(null);
+
   }
 };
