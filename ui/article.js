@@ -10,6 +10,23 @@ request.onreadystatechange = function() {
     if (request.readyState === XMLHttpRequest.DONE) {
         //Take some action
         if (request.status == 200) {
+             var ul = document.getElementById('postList');
+             ul.innerHTML = request.responseText;
+        }
+    }
+    //Not done yet
+};
+    
+    //Make the request
+request.open('GET', "http://newnikhil.imad.hasura-app.io/display-comments", true);
+request.send(null);
+
+var request = new XMLHttpRequest();
+
+request.onreadystatechange = function() {
+    if (request.readyState === XMLHttpRequest.DONE) {
+        //Take some action
+        if (request.status == 200) {
             comment.style.display = 'block';
             post_btn.style.display = 'block';
         } else if (request.status === 403) {
