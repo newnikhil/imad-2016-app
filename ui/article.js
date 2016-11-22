@@ -36,6 +36,7 @@ post.onclick = function() {
     li.textContent = text;
     var ul = document.getElementById('postList');
     ul.appendChild(li);
+    comment.value = "";
     
     var req = new XMLHttpRequest();
 
