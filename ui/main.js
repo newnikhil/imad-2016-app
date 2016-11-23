@@ -2,7 +2,9 @@ function loadArticles() {
     var req = new XMLHttpRequest();
     
     req.onreadystatechange = function() {
+        console.log("Hello");
         if (req.readyState === XMLHttpRequest.DONE) {
+            console.log("Hello2");
 //            if (req.status == 200) {
                 ul = document.createElement('ul');
                 ul.innerHTML = req.responseText;
