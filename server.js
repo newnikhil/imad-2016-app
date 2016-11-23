@@ -207,7 +207,7 @@ app.get('/display-comments/:articleName', function(req, res) {
        } else {
             var articleId = result.rows[0].id;
             
-            pool.query("SELECT * FROM comment WHERE articleId = " + articleId, function(err, result) {
+            pool.query("SELECT * FROM comment WHERE article_id = " + articleId, function(err, result) {
                if (err)  {
                    res.status(500).send("2" + err.toString());
                } else {
