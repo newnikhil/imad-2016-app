@@ -232,7 +232,7 @@ app.post('/post-comment', function(req, res) {
     });
 });
 
-app.get('/articles', function(req, res) {
+app.get('/load-articles', function(req, res) {
     var articleList = "";
     
     pool.query('SELECT * FROM "articles"', function(err, result) {
