@@ -19,7 +19,7 @@ req.onreadystatechange = function() {
     //Not done yet
 };
 
-var articleName = window.location.href.split('/')[2];
+var articleName = window.location.href.split('/')[4];
     //Make the request
 req.open('GET', "http://newnikhil.imad.hasura-app.io/display-comments/" + articleName, true);
 req.send(null);
