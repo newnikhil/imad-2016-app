@@ -2,14 +2,16 @@ function loadArticles() {
     var req = new XMLHttpRequest();
     
     req.onreadystatechange = function() {
-        if (req.status == 200) {
-            ul = document.createElement('ul');
-            ul.innerHTML = req.responseText;
-            document.getElementById('articles').appendChild(ul);
-        } else if (req.status == 403) {
-            
-        } else if (req.status == 500) {
-            
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                ul = document.createElement('ul');
+                ul.innerHTML = req.responseText;
+                document.getElementById('articles').appendChild(ul);
+            } else if (req.status == 403) {
+                
+            } else if (req.status == 500) {
+                
+            }
         }
     };
     
