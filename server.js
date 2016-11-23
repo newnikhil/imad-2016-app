@@ -234,7 +234,7 @@ app.post('/post-comment', function(req, res) {
             res.status(500).send(err.toString());
         } else {
             var username = result.rows[0].username;
-            pool.query('SELECT id from "article" WHERE title = "' + articleName + '"', function(err, result) {
+            pool.query('SELECT id from "article" WHERE title = \'' + articleName + '\'', function(err, result) {
                 if (err) {
                     res.status(500).send(err.toString());
                 } else {
