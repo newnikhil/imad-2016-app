@@ -3,15 +3,15 @@ function loadArticles() {
     
     req.onreadystatechange = function() {
         if (req.readyState === XMLHttpRequest.DONE) {
-            if (req.status == 200) {
+//            if (req.status == 200) {
                 ul = document.createElement('ul');
                 ul.innerHTML = req.responseText;
                 document.getElementById('articles').appendChild(ul);
-            } else if (req.status == 403) {
+  //          } else if (req.status == 403) {
                 
-            } else if (req.status == 500) {
+    //        } else if (req.status == 500) {
                 
-            }
+      //      }
         }
     };
     
