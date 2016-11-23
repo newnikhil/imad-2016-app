@@ -218,7 +218,8 @@ app.get('/display-comments/:articleName', function(req, res) {
                    res.send(comments);
                }
             });
-       });
+       }
+    });
 });
 
 app.post('/post-comment', function(req, res) {
