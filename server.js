@@ -239,8 +239,8 @@ app.get('/load-articles', function(req, res) {
         if (err) {
             res.status(500).send(err.toString());
         } else {
-            //var articleList = "";
-            for (var i = 0; i < result.rows[0].length; i++) {
+//            var articleList = "";
+            for (var i = 0; i < result.rows.length; i++) {
                 articleList += '<li>' + result.rows[i].title + '<li>';
             }
             res.status(200).send(articleList);
