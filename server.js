@@ -261,7 +261,7 @@ app.get('/load-articles', function(req, res) {
         } else {
 //            var articleList = "";
             for (var i = 0; i < result.rows.length; i++) {
-                articleList += '<li><a href="http://newnikhil.imad.hasura-app.io/articles/' + result.rows[i].title + '">' + result.rows[i].title + '<li>';
+                articleList += '<li><a href="http://newnikhil.imad.hasura-app.io/articles/' + result.rows[i].title + '">' + result.rows[i].title + '</li>';
             }
             res.status(200).send(articleList);
         }
