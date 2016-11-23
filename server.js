@@ -203,13 +203,13 @@ app.get('/articles/:articleName', function(req, res) {
 app.get('/display-comments/:articleName', function(req, res) {
     pool.query("SELECT id FROM article where title = '" + req.params.articleName + "'", function(err, result) {
        if (err)  {
-           res.status(500).send(err.toString());
+           res.status(500).send("1" + err.toString());
        } else {
             var articleId = result.rows[0].id;
             
             pool.query("SELECT * FROM comment WHERE articleId = " + articleId, function(err, result) {
                if (err)  {
-                   res.status(500).send(err.toString());
+                   res.status(500).send("2" + err.toString());
                } else {
                    var comments = "";
                    for (var i = 0; i < result.rows.length; i++) {
