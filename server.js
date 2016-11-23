@@ -68,7 +68,7 @@ function createTemplate (data) {
                 <hr />
                 <h4>Comments</h4>
                 <div id="comment_form" style='width: 100%'>
-                      <textarea id='comment' style='display: none, width: inherit' class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
+                      <textarea id='comment' style='display: none; width: inherit' class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
                 </div>
                 <div class="button-group pull-right">
                     <a href="#" id="post" style="display: none" class="btn btn-primary">Post</a>
