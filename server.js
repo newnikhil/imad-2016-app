@@ -233,11 +233,13 @@ app.post('/post-comment', function(req, res) {
 });
 
 app.get('/articles', function(req, res) {
+    var articleList = "";
+    
     pool.query('SELECT * FROM "articles"', function(err, result) {
         if (err) {
             
         } else {
-            var articleList = "";
+            //var articleList = "";
             for (var i = 0; i < result.rows.length; i++) {
                 articleList += '<li>' + result.rows[i].title + '<li>';
             }
