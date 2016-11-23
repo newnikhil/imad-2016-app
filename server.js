@@ -235,15 +235,15 @@ app.post('/post-comment', function(req, res) {
 app.get('/load-articles', function(req, res) {
     var articleList = "";
     
-    pool.query('SELECT * FROM "articles"', function(err, result) {
+    pool.query('SELECT * FROM "article"', function(err, result) {
         if (err) {
-            
+            res.status(500).send(err.toString());
         } else {
             //var articleList = "";
-            for (var i = 0; i < result.rows.length; i++) {
+            for (var i = 0; i < result.rows[0].length; i++) {
                 articleList += '<li>' + result.rows[i].title + '<li>';
             }
-            res.send(articleList);
+            res.status(200).send(articleList);
         }
     });
 });
