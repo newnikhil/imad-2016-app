@@ -185,6 +185,9 @@ submit.onclick = function() {
 
 };
 */
+
+loadArticles();
+
 function loadArticles() {
     var req = new XMLHttpRequest();
     
