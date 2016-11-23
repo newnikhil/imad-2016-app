@@ -185,3 +185,22 @@ submit.onclick = function() {
 
 };
 */
+function loadArticles() {
+    var req = new XMLHttpRequest();
+    
+    req.onreadystatechange = function() {
+        if (req.status == 200) {
+            ul = document.createElement('ul');
+            ul.innerHTML = req.responseText;
+            document.getElementById('articles').appendChild(ul);
+        } else if (req.status == 403) {
+            
+        } else if (req.status == 500) {
+            
+        }
+    };
+    
+    req.open('GET', 'http://newnikhil.imad.hasura-app.io/articles', true);
+    req.send(null);
+}
+
