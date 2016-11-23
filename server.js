@@ -196,8 +196,8 @@ app.get('/articles/:articleName', function(req, res) {
     });
 });
 
-app.get('/display-comments', function(req, res) {
-    pool.query("SELECT * FROM comment", function(err, result) {
+app.get('/display-comments/:articleName', function(req, res) {
+    pool.query("SELECT * FROM comment WHERE title = '" + req.params.articleName + "'", function(err, result) {
        if (err)  {
            res.status(500).send(err.toString());
        } else {
