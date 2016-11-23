@@ -15,7 +15,7 @@ function loadArticles() {
         }
     };
     
-    req.open('GET', 'http://newnikhil.imad.hasura-app.io/articles', true);
+    req.open('GET', 'http://newnikhil.imad.hasura-app.io/load-articles', true);
     req.send(null);
 }
 
