@@ -12,6 +12,7 @@ req.onreadystatechange = function() {
         if (req.status == 200) {
 //             var ul = getElementById('postList');
             var ul = document.createElement('ul');
+            ul.id = 'postList';
             ul.innerHTML = req.responseText;
             document.getElementById('comments').innerHTML = "";
             document.getElementById('comments').appendChild(ul);
