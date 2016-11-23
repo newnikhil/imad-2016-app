@@ -10,15 +10,18 @@ req.onreadystatechange = function() {
     if (req.readyState === XMLHttpRequest.DONE) {
         //Take some action
         if (req.status == 200) {
-             var ul = document.getElementById('postList');
-             ul.innerHTML = req.responseText;
+//             var ul = getElementById('postList');
+            var ul = document.createElement('ul');
+            ul.innerHTML = req.responseText;
+            document.getElementById('comments').innerHTML = ul;
         }
     }
     //Not done yet
 };
-    
+
+var articleName = window.location.href.split('/')[2];
     //Make the request
-req.open('GET', "http://newnikhil.imad.hasura-app.io/display-comments", true);
+req.open('GET', "http://newnikhil.imad.hasura-app.io/display-comments/" + articleName, true);
 req.send(null);
 
 var request = new XMLHttpRequest();
