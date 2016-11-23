@@ -226,6 +226,7 @@ app.post('/post-comment', function(req, res) {
     //username, password
     //JSON
     var comment = req.body.comment;
+    var articleName: req.body.articleName;
     
 //    var username = "";
     pool.query('SELECT username from "user" WHERE id = ' + req.session.auth.userId, function(err, result) {
@@ -233,11 +234,18 @@ app.post('/post-comment', function(req, res) {
             res.status(500).send(err.toString());
         } else {
             var username = result.rows[0].username;
-            pool.query('INSERT INTO "comment" (comment, username) VALUES ($1, $2)', [comment, username], function(err, result) {
+            pool.query('SELECT id from "article" WHERE title = "' + articleName + '"', function(err, result) {
                 if (err) {
                     res.status(500).send(err.toString());
                 } else {
-                    res.send("Comment inserted " + comment + ": " + username);
+                    var articleId = result.rows[0].id;
+                    pool.query('INSERT INTO "comment" (comment, username, article_id) VALUES ($1, $2, $3)', [comment, username, articleId], function(err, result) {
+                        if (err) {
+                            res.status(500).send(err.toString());
+                        } else {
+                            res.send("Comment inserted " + comment + ": " + username);
+                        }
+                    });
                 }
             });
         }
