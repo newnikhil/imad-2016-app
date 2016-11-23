@@ -226,7 +226,7 @@ app.post('/post-comment', function(req, res) {
     //username, password
     //JSON
     var comment = req.body.comment;
-    var articleName: req.body.articleName;
+    var articleName = req.body.articleName;
     
 //    var username = "";
     pool.query('SELECT username from "user" WHERE id = ' + req.session.auth.userId, function(err, result) {
