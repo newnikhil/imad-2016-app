@@ -13,7 +13,8 @@ req.onreadystatechange = function() {
 //             var ul = getElementById('postList');
             var ul = document.createElement('ul');
             ul.innerHTML = req.responseText;
-            document.getElementById('comments').innerHTML = ul;
+            document.getElementById('comments').innerHTML = "";
+            document.getElementById('comments').appendChild(ul);
         }
     }
     //Not done yet
