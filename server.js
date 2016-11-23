@@ -201,17 +201,24 @@ app.get('/articles/:articleName', function(req, res) {
 });
 
 app.get('/display-comments/:articleName', function(req, res) {
-    pool.query("SELECT * FROM comment WHERE title = '" + req.params.articleName + "'", function(err, result) {
+    pool.query("SELECT id FROM article where title = '" + req.params.articleName + "'", function(err, result) {
        if (err)  {
            res.status(500).send(err.toString());
        } else {
-           var comments = "";
-           for (var i = 0; i < result.rows.length; i++) {
-               comments += '<li>' + result.rows[i].comment + '</li>';
-           }
-           res.send(comments);
-       }
-    });
+            var articleId = result.rows[0].id;
+            
+            pool.query("SELECT * FROM comment WHERE articleId = " + articleId, function(err, result) {
+               if (err)  {
+                   res.status(500).send(err.toString());
+               } else {
+                   var comments = "";
+                   for (var i = 0; i < result.rows.length; i++) {
+                       comments += '<li>' + result.rows[i].comment + '</li>';
+                   }
+                   res.send(comments);
+               }
+            });
+       });
 });
 
 app.post('/post-comment', function(req, res) {
