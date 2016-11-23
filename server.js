@@ -69,6 +69,11 @@ function createTemplate (data) {
                 <h4>Comments</h4>
                 <div id="comment_form">
                 </div>
+                <form method='post' action='/post-comment'>
+                    <div class="form-group">
+                      <textarea id='comment' style='display: none' class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
+                    </div>
+                </form>
                 <div id="comments">
                     <center>Loading comments...</center>
                 </div>
