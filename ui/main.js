@@ -113,6 +113,8 @@ submit.onclick = function() {
                 alert("User successfully logged in");
                 //hide login form
                 document.getElementById('login').style.display = 'none';
+                //show logout div
+                document.getElementById('logout').style.display = 'block';
             } else if (request.status === 403) {
                 alert("username/password incorrect");
             } else if (request.status === 500) {
