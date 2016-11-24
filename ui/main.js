@@ -36,6 +36,9 @@ art.onclick = function()
             //Take some action
             if (request.status == 200) {
                 window.location.href = "http://newnikhil.imad.hasura-app.io/article-two";
+                //show logout and hide login
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('logout').style.display = 'block';
 //                window.location.reload();
                 //alert("User successfully logged in");
 /*                var req = new XMLHttpRequest();
