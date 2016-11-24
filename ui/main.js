@@ -11,7 +11,11 @@ function checkLogin() {
                 //show logout div
                 document.getElementById('logout').style.display = 'block';
             } else if (request.status === 403) {
-                alert("You need to login first!");
+                //hide login form                
+                document.getElementById('login').style.display = 'block';
+                //show logout div
+                document.getElementById('logout').style.display = 'none';
+//                alert("You need to login first!");
             } else if (request.status === 500) {
                 alert("Something went wrong on the server");
             }
