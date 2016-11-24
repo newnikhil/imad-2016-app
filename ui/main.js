@@ -111,6 +111,8 @@ submit.onclick = function() {
             //Take some action
             if (request.status == 200) {
                 alert("User successfully logged in");
+                //hide login form
+                document.getElementById('login').style.display = 'none';
             } else if (request.status === 403) {
                 alert("username/password incorrect");
             } else if (request.status === 500) {
