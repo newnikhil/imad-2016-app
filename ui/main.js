@@ -1,3 +1,31 @@
+function checkLogin() {
+    var request = new XMLHttpRequest();
+    
+  //Capture the response and store it in a variable
+    request.onreadystatechange = function() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            //Take some action
+            if (request.status == 200) {
+                //hide login form
+                document.getElementById('login').style.display = 'none';
+                //show logout div
+                document.getElementById('logout').style.display = 'block';
+            } else if (request.status === 403) {
+                alert("You need to login first!");
+            } else if (request.status === 500) {
+                alert("Something went wrong on the server");
+            }
+        }
+        //Not done yet
+    };
+    
+    //Make the request
+    request.open('GET', "http://newnikhil.imad.hasura-app.io/check-login", true);
+    request.send(null);
+}
+
+checkLogin();
+
 function loadArticles() {
     var req = new XMLHttpRequest();
     
@@ -36,9 +64,6 @@ art.onclick = function()
             //Take some action
             if (request.status == 200) {
                 window.location.href = "http://newnikhil.imad.hasura-app.io/article-two";
-                //show logout and hide login
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('logout').style.display = 'block';
 //                window.location.reload();
                 //alert("User successfully logged in");
 /*                var req = new XMLHttpRequest();
