@@ -120,7 +120,7 @@ app.post('/create-user', function(req, res) {
     var password = req.body.password;
     
     if (username.length === 0 || password.length === 0) {
-        res.status(403).send('username/password is too short!');
+        res.status(403).send("username/password is too short!");
     }
     var salt = crypto.randomBytes(128).toString('hex');
     var dbString = hash(password, salt);
@@ -298,6 +298,14 @@ app.get('/article-two', function (req, res) {
 
 app.get('/article-three', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+});
+
+app.get('/ui/app.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'app.js'));
+});
+
+app.get('/ui/menu_style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'menu_style.css'));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
