@@ -75,7 +75,7 @@ loginPanel.onclick = function()
         }
     };
     
-    req.open('GET', "http://newnikhil.imad.hasura-app.io/ui/loginPopup", true);
+    req.open('GET', "http://newnikhil.imad.hasura-app.io/loginPopup", true);
     req.send(null);
 };
 /*
