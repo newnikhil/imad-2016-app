@@ -52,7 +52,7 @@ function createTemplate (data) {
             <link href="/ui/menu_style.css" rel="stylesheet" />
         </head>
         <body>
-            <div class='jumbotron">
+            <div class="jumbotron">
                 <div class="container">
                     <div>
                         <a href="/">Home</a>
