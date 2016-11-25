@@ -279,6 +279,18 @@ app.get('/loginPopup', function(req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'loginPopup.html'))
 });
 
+app.get('/ui/login.js', function(req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'login.js'))
+});
+
+app.get('/ui/login.css', function(req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'login.css'))
+});
+
+app.get('/ui/jquery.leanModal.min.js', function(req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'jquery.leanModal.min.js'))
+});
+
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
