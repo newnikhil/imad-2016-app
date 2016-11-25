@@ -66,7 +66,7 @@ loginPanel.onclick = function()
     req.onreadystatechange = function() {
         if (req.readyState === XMLHttpRequest.DONE) {
             if (req.status == 200) {
-                
+                window.location.href = "http://newnikhil.imad.hasura-app.io/loginPopup";
             } else if (req.status == 403) {
                 
             } else if (req.status == 500) {
