@@ -1,10 +1,36 @@
 <!doctype html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+        <link href='/ui/menu_style.css' rel='stylesheet'>
+        
         <link href="/ui/style.css" rel="stylesheet" />
     </head>
     <body>
+        <div class="menu">
+          <!-- Menu icon -->
+          <div class="icon-close">
+            <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+          </div>
+    
+          <!-- Menu -->
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+    
+        <!-- Main body -->
+        <div class="jumbotron">
+    
+            <div class="icon-menu">
+                <i class="fa fa-bars"></i>
+                Menu
+            </div>
+        </div>
         <div class="container">
             <div class="center">
                 <img id="madi" src="https://sqlbolt.com/cs/images/sqlbolt_complete.png" class="img-medium"/>
@@ -33,11 +59,12 @@
                     <a href="http://newnikhil.imad.hasura-app.io/logout">Logout</a>
                 </h4>
             </div>
-            <!--div>
+            <hr />
+            <div>
                 <p>
                     <a id='article2'>Article 2</a>
                 </p>
-            </div-->
+            </div>
             <!--div class="footer">
                 This button <button id="counter">Click Me!</button> has been clicked <span id="count">0</span> times.
                 <hr/>
@@ -46,12 +73,14 @@
                 <ul id="namelist">
                 </ul>
             </div-->
-            <hr />
         </div>
-        <div id = 'articles' class='container'>
+        <hr />
+        <div id = 'articles'>
             Articles:
         </div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
