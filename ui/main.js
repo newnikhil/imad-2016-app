@@ -54,7 +54,7 @@ function loadArticles() {
 }
 
 loadArticles();
-
+/*
 var art = document.getElementById('article2');
 
 art.onclick = function()
@@ -70,7 +70,7 @@ art.onclick = function()
                 window.location.href = "http://newnikhil.imad.hasura-app.io/article-two";
 //                window.location.reload();
                 //alert("User successfully logged in");
-/*                var req = new XMLHttpRequest();
+                var req = new XMLHttpRequest();
                 
                 req.onreadystatechange = function() {
                     if (req.readyState ===  XMLHttpRequest.DONE) {
@@ -85,7 +85,7 @@ art.onclick = function()
                     }
                 };
                 req.open('GET', "http://newnikhil.imad.hasura-app.io/article-two", true);
-                req.send(null);*/
+                req.send(null);
             } else if (request.status === 403) {
                 alert("You need to login first!");
             } else if (request.status === 500) {
@@ -102,6 +102,7 @@ art.onclick = function()
     //Capture a list of names and render as a list
 
 };
+*/
 /*
 //Counter code
 var button = document.getElementById("counter");
