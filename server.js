@@ -52,32 +52,34 @@ function createTemplate (data) {
             <link href="/ui/menu_style.css" rel="stylesheet" />
         </head>
         <body>
-            <div class="container">
-                <div>
-                    <a href="/">Home</a>
+            <div class='jumbotron">
+                <div class="container">
+                    <div>
+                        <a href="/">Home</a>
+                    </div>
+                    <hr/>
+                    <h3>
+                        ${heading}
+                    </h3>
+                    <div>
+                        ${date.toDateString()}
+                    </div>
+                    <div>
+                        ${content}
+                    </div>
+                    <hr />
+                    <h4>Comments</h4>
+                    <div id="comment_form" style='width: 100%'>
+                          <textarea id='comment' style='display: none; width: inherit' class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="button-group pull-right">
+                        <a href="#" id="post" style="display: none" class="btn btn-primary">Post</a>
+                    </div>
+                    <div id="comments">
+                        <center>Loading comments...</center>
+                    </div>
+                    <script type="text/javascript" src="/ui/article.js"></script>
                 </div>
-                <hr/>
-                <h3>
-                    ${heading}
-                </h3>
-                <div>
-                    ${date.toDateString()}
-                </div>
-                <div>
-                    ${content}
-                </div>
-                <hr />
-                <h4>Comments</h4>
-                <div id="comment_form" style='width: 100%'>
-                      <textarea id='comment' style='display: none; width: inherit' class="form-control status-box" rows="2" placeholder="What's on your mind?"></textarea>
-                </div>
-                <div class="button-group pull-right">
-                    <a href="#" id="post" style="display: none" class="btn btn-primary">Post</a>
-                </div>
-                <div id="comments">
-                    <center>Loading comments...</center>
-                </div>
-                <script type="text/javascript" src="/ui/article.js"></script>
             </div>
         </body>
     </html>`;
