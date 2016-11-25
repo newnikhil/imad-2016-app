@@ -185,7 +185,7 @@ submit_register.onclick = function() {
             if (request.status == 200) {
                 alert("Registered successfully!");
             } else if (request.status === 403) {
-                alert(request.responseText);
+                alert("username/password incorrect");
             } else if (request.status === 500) {
                 alert("Something went wrong on the server");
             }
