@@ -1,11 +1,11 @@
 /* Initial body */
-body {
+/*body {
   left: 0;
   margin: 0;
   overflow: hidden;
   position: relative;
 }
-
+*/
 /* Initial menu */
 .menu {
   background: #202024 url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
