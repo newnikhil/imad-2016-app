@@ -54,6 +54,30 @@ function loadArticles() {
 }
 
 loadArticles();
+
+//login/register from left panel
+
+var loginPanel = document.getElementById('login_panel');
+
+loginPanel.onclick = function()
+{
+    var req = new XMLHttpRequest();
+    
+    req.onreadystatechange = function() {
+        if (req.readyState === XMLHttpRequest.DONE) {
+            if (req.status == 200) {
+                
+            } else if (req.status == 403) {
+                
+            } else if (req.status == 500) {
+                
+            }
+        }
+    };
+    
+    req.open('GET', "http://newnikhil.imad.hasura-app.io/loginPopup", true);
+    req.send(null);
+};
 /*
 var art = document.getElementById('article2');
 
