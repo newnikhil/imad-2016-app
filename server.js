@@ -275,8 +275,8 @@ app.get('/load-articles', function(req, res) {
     });
 });
 
-app.get('/ui/loginPopup', function(req, res) {
-    res.sendFile(path.join(__dirname, 'loginPopup.html'))
+app.get('/loginPopup', function(req, res) {
+    res.sendFile(path.join(__dirname, 'ui', 'loginPopup.html'))
 });
 
 app.get('/ui/style.css', function (req, res) {
