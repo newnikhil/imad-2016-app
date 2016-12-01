@@ -56,7 +56,7 @@ function loadArticles() {
 loadArticles();
 
 //login/register from left panel
-
+/*
 var loginPanel = document.getElementById('login_panel');
 
 loginPanel.onclick = function()
@@ -78,6 +78,7 @@ loginPanel.onclick = function()
     req.open('GET', "http://newnikhil.imad.hasura-app.io/loginPopup", true);
     req.send(null);
 };
+*/
 /*
 var art = document.getElementById('article2');
 
